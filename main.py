@@ -1,16 +1,33 @@
-def analysis_text():
-    text = "a1 b2 c1 d1 e1"
-    print(text)
+from lorem_text import lorem
+
+
+def analysis_text(text):
+    # словарь для хранения частот символов
+    frequency = {}
+    # Подсчитываем общее число символов в тексте
+    count_symbols = len(text)
+    # Проходимся по каждому символу в тексте
+    for symbol in text:
+        if symbol in frequency:
+            frequency[symbol] += 1
+        else:
+            frequency[symbol] = 1
+    # Преобразуем частоты символов в пары (символ, частота встречаемости)
+    result = [(symbol, frequency / count_symbols) for symbol, frequency in frequency.items()]
+    return result
 
 
 def hand_text():
-    a = "abc"
-    return a
+    text = input("Введите текст: ")
+    print("Вы ввели следующий текст:")
+    print(text)
+    return text
 
 
 def autotext():
-    b = "deb"
-    return b
+    text = lorem.paragraph()
+    print(text)
+    return text
 
 
 def menu():
@@ -31,7 +48,9 @@ def menu():
             text = auto_text()
             input("Нажмите Enter, чтобы продолжить...")
         elif choose == "3":
-            result = analysis_text()
+            result = analysis_text(text)
+            for symbol, frequency in result:
+                print(f"{symbol} - {frequency:.4f}")
             input("Нажмите Enter, чтобы продолжить...")
         elif choose == "4":
             print("Выход из программы.")
