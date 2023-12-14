@@ -1,8 +1,16 @@
-from lorem_text import lorem
+def analysis_text():
+    text = "a1 b2 c1 d1 e1"
+    print(text)
 
 
-def analysis_text(text):
-    return
+def hand_text():
+    a = "abc"
+    return a
+
+
+def autotext():
+    b = "deb"
+    return b
 
 
 def menu():
@@ -17,15 +25,19 @@ def menu():
         choose = input("Выберите пункт меню: ")
 
         if choose == "1":
-            pass
+            text = hand_text()
+            input("Нажмите Enter, чтобы продолжить...")
         elif choose == "2":
-            pass
+            text = auto_text()
+            input("Нажмите Enter, чтобы продолжить...")
         elif choose == "3":
-            pass
+            result = analysis_text()
+            input("Нажмите Enter, чтобы продолжить...")
         elif choose == "4":
-            pass
+            print("Выход из программы.")
+            break
         else:
-            pass
+            print("Некорректный выбор. Пожалуйста, выберите снова.")
 
 
 if __name__ == "__main__":
